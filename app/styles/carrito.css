@@ -79,3 +79,7 @@
 .btn_eliminar:hover {
   cursor: pointer;
 }
+
+.paypalBTN {
+  margin-top: 2rem;
+}

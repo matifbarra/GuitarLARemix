@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLoaderData, useOutletContext } from '@remix-run/react';
+import { useLoaderData, useOutletContext, Link } from '@remix-run/react';
 import { getGuitarra } from '~/models/guitarras.server';
 
 export async function loader({ params }) {
@@ -34,6 +34,10 @@ function Guitarra() {
   const [cantidad, setCantidad] = useState(0);
   const guitarra = useLoaderData();
   const { nombre, descripcion, imagen, precio } = guitarra.data[0].attributes;
+  const clickcarrito = () => {
+    alert('Guitarra Agregada Con Exito!');
+    location.href = '/carrito';
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -73,7 +77,11 @@ function Guitarra() {
             <option value='4'>4</option>
             <option value='5'>5</option>
           </select>
-          <input type='submit' value='Agregar Al Carrito' />
+          <input
+            type='submit'
+            value='Agregar Al Carrito'
+            onClick={clickcarrito}
+          />
         </form>
       </div>
     </div>
