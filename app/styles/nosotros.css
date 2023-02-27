@@ -1,0 +1,20 @@
+.nosotros .contenido {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: auto;
+  display: block;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .nosotros .contenido {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+  }
+}
+
+p {
+  white-space: pre-wrap;
+  font-size: 2rem;
+}
